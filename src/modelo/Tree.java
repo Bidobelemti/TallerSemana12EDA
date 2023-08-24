@@ -1,5 +1,4 @@
 package modelo;
-//1/08/2023
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -8,13 +7,11 @@ import java.util.Stack;
 class Tree {
 
     private Node root; // first node of tree
-    // -------------------------------------------------------------
 
     public Tree() // constructor
     {
         root = null;
     } // no nodes in tree yet
-    //-------------------------------------------------------------
 
     public Node find(int key) {
         Node current = root;
@@ -59,7 +56,6 @@ class Tree {
             }
         }
     }
-    // -------------------------------------------------------------
 
     public boolean delete(int key) {
         Node current = root;
@@ -121,9 +117,6 @@ class Tree {
 
         return true;
     }
-    // -------------------------------------------------------------
-    // returns node with next-highest value after delNode
-    // goes to right child, then right child�s left descendents
 
     private Node getSuccessor(Node delNode) {
         Node successorParent = delNode;
@@ -143,7 +136,6 @@ class Tree {
         }
         return successor;
     }
-    // -------------------------------------------------------------
 
     public void traverse(int traverseType) {
         switch (traverseType) {
@@ -181,7 +173,6 @@ class Tree {
         }
         System.out.println();
     }
-    //-------------------------------------------------------------
 
     private void preOrder(Node localRoot) {
         if (localRoot != null) {
@@ -190,7 +181,6 @@ class Tree {
             preOrder(localRoot.rightChild);
         }
     }
-    //-------------------------------------------------------------
 
     private void inOrder(Node localRoot) {
         if (localRoot != null) {
@@ -199,7 +189,6 @@ class Tree {
             inOrder(localRoot.rightChild);
         }
     }
-    //-------------------------------------------------------------
 
     private void postOrder(Node localRoot) {
         if (localRoot != null) {
@@ -208,7 +197,6 @@ class Tree {
             System.out.print(localRoot.iData + "  ");
         }
     }
-    //-------------------------------------------------------------
 
     public void displayTree() {
         Stack globalStack = new Stack();
@@ -242,18 +230,17 @@ class Tree {
                 for (int j = 0; j < nBlanks * 2 - 2; j++) {
                     System.out.print(' ');
                 }
-            } // end while globalStack not empty
+            }
             System.out.println();
             nBlanks /= 2;
             while (localStack.isEmpty() == false) {
                 globalStack.push(localStack.pop());
             }
-        } // end while isRowEmpty is false
+        }
         System.out.println(
                 "......................................................");
-    } // end displayTree()
-    //-------------------------------------------------------------
-
+    }
+    
     public void levelOrder() {
         if (root == null) {
             System.out.println("El árbol está vacío.");
@@ -278,7 +265,5 @@ class Tree {
         }
         System.out.println();
     }
-
-} // end class Tree
-////////////////////////////////////////////////////////////////
+}
 

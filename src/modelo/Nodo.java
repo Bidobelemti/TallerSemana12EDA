@@ -1,5 +1,5 @@
 package modelo;
-//1/08/2023
+
 class Node
 {
 
@@ -15,4 +15,4 @@ class Node
 		System.out.print(dData);
 		System.out.print("} ");
 	}
-} // end class Node
+}
